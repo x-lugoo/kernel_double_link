@@ -24,9 +24,12 @@ __list_add	list.h	/^static inline void __list_add(struct list_head *new, $/;"	f	
 __list_del	list.h	/^static inline void __list_del(struct list_head * prev, struct list_head * next) $/;"	f	signature:(struct list_head * prev, struct list_head * next)
 __list_for_each	list.h	162;"	d
 __list_splice	list.h	/^static inline void __list_splice(struct list_head *list, $/;"	f	signature:(struct list_head *list, struct list_head *head)
+a	doublelink.c	/^	int a;$/;"	m	struct:test_kernel_list	file:	access:public
 ch	list.c	/^    unsigned char ch; $/;"	m	struct:ST	file:	access:public
 container_of	list.h	6;"	d
 first	list.h	/^struct hlist_node *first; $/;"	m	struct:hlist_head	typeref:struct:hlist_head::hlist_node	access:public
+func	doublelink.c	/^	void*(*func)(void*);$/;"	m	struct:test_kernel_list	file:	access:public
+h_list	doublelink.c	/^	struct list_head h_list;$/;"	m	struct:test_kernel_list	typeref:struct:test_kernel_list::list_head	file:	access:public
 hlist_add_after	list.h	/^static inline void hlist_add_after(struct hlist_node *n, $/;"	f	signature:(struct hlist_node *n, struct hlist_node *next)
 hlist_add_before	list.h	/^static inline void hlist_add_before(struct hlist_node *n, $/;"	f	signature:(struct hlist_node *n, struct hlist_node *next)
 hlist_add_head	list.h	/^static inline void hlist_add_head(struct hlist_node *n, struct hlist_head *h) $/;"	f	signature:(struct hlist_node *n, struct hlist_head *h)
@@ -69,7 +72,9 @@ list_move_tail	list.h	/^static inline void list_move_tail(struct list_head *list
 list_prepare_entry	list.h	183;"	d
 list_splice	list.h	/^static inline void list_splice(struct list_head *list, struct list_head *head) $/;"	f	signature:(struct list_head *list, struct list_head *head)
 list_splice_init	list.h	/^static inline void list_splice_init(struct list_head *list, $/;"	f	signature:(struct list_head *list, struct list_head *head)
+main	doublelink.c	/^int main(void)$/;"	f	signature:(void)
 main	list.c	/^int main() $/;"	f
+name	doublelink.c	/^	char name[20];$/;"	m	struct:test_kernel_list	file:	access:public
 next	list.h	/^struct hlist_node *next, **pprev; $/;"	m	struct:hlist_node	typeref:struct:hlist_node::hlist_node	access:public
 next	list.h	/^struct list_head *next, *prev; $/;"	m	struct:list_head	typeref:struct:list_head::list_head	access:public
 offsetof	list.h	4;"	d
@@ -78,4 +83,9 @@ prefetch	list.h	/^static inline void prefetch(const void *x) {;} $/;"	f	signatur
 prefetchw	list.h	/^static inline void prefetchw(const void *x) {;} $/;"	f	signature:(const void *x)
 prev	list.h	/^struct list_head *next, *prev; $/;"	m	struct:list_head	typeref:struct:list_head::	access:public
 st	list.c	/^} *st; $/;"	v	typeref:struct:ST
+test_kernel_list	doublelink.c	/^struct test_kernel_list{$/;"	s	file:
+test_kernel_list::a	doublelink.c	/^	int a;$/;"	m	struct:test_kernel_list	file:	access:public
+test_kernel_list::func	doublelink.c	/^	void*(*func)(void*);$/;"	m	struct:test_kernel_list	file:	access:public
+test_kernel_list::h_list	doublelink.c	/^	struct list_head h_list;$/;"	m	struct:test_kernel_list	typeref:struct:test_kernel_list::list_head	file:	access:public
+test_kernel_list::name	doublelink.c	/^	char name[20];$/;"	m	struct:test_kernel_list	file:	access:public
 this_data	list.c	/^    int 	this_data; $/;"	m	struct:ST	file:	access:public
